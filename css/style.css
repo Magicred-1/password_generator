@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+/* RESET 2022 */
+html{
+    font-size:62.5%;
+    scroll-behavior:smooth;
+}
+body{
+    font: 1.6rem 'Fredoka', sans-serif;
+    margin:0
+}
+section,figure,h1,h2,h3,h4,h5,h6,ol,p,ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    color:#000;
+    text-decoration:none;
+}
+*{ 
+    box-sizing:border-box;
+}
+button{
+    padding:0;
+    border:0;
+    background-color:transparent;
+}
+/* HEADER */
+header{
+    background-color: #f39c12;
+    padding: 2rem;
+    border-bottom: solid .5rem #d38810;
+}
+header h1{
+    font-weight: bold;
+    text-align: center;
+}
+header img {
+    max-height: 2rem;
+    max-height: 2rem;
+}
+
+/*MAIN*/
+main{
+    max-width: 90rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+main h2{
+    background-color: #e67e22;
+    color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+main form{
+    display: block;
+}
+main fieldset legend{
+    font-weight: bold;
+    padding: .5rem;
+    text-align: center;
+    margin: 0 auto;
+}
+main fieldset{
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+main form label{
+    display: block;
+    margin: 1rem 0;
+}
+input{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: solid .1rem #d38810;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    margin: .5rem 0;
+}
+input[type="submit"]{
+    background-color: #f1c40f;
+    color: #000;
+    border: none;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: 1rem 0;
+}
+input[type="submit"]:hover{
+    background-color: #e67e22;
+    color: #fff;
+}
+select {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: solid 0.1rem #d38810;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+}
