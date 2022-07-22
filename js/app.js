@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     let randomNumber = Math.floor(Math.random() * 10) + 1;
-    console.log(randomNumber);
 
     let generateButton = document.querySelector("input[name='generate']");
     let cancelButton = document.querySelector("input[name='cancel']");
     let generatedPassword = document.querySelector("input[type='text']");
     let copyPasswordButton = document.querySelector("input[name='copy']");
+    let passwordHistory = document.querySelector("tbody");
     let passwordAttemps = 1;
 
     let latestPasswordGenerated = ["Test1", "Test2", "Test3"];
@@ -43,6 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 randomNumber = Math.floor(Math.random() * 10) + 1;
             }
 
+            app.addPasswordToHistory(generatedPassword.value)
+        },
+
+        addPasswordToHistory(password) {
+            latestPasswordGenerated.push(password);
+            passwordHistory.insertAdjacentHTML("afterend", "<tr><td>" + generatedPassword.value + "</td></tr>"); 
         },
 
         resetPassword() {
@@ -50,9 +56,20 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         copyPassword() {
-            generatedPassword !== "" ? 
-            navigator.clipboard.writeText(generatedPassword.value) 
-            : generatedPassword.value = "You need to generate a passwords first !";
+            if(generatedPassword.value !== "" && generatedPassword.value !== "You need to generate a password first !") 
+            {
+                console.log(typeof(generatedPassword));
+                navigator.clipboard.writeText(generatedPassword.value)
+                Swal.fire({
+                    title: 'The password was added to your clipboard',
+                    icon: 'success',
+                    confirmButtonText: 'Okay',
+                  })
+            } 
+            else 
+            {
+                generatedPassword.value = "You need to generate a password first !";
+            }
         },
     })
 

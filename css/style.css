@@ -72,6 +72,17 @@ main form label{
     display: block;
     margin: 1rem 0;
 }
+main table,
+td {
+    border: 1px solid #d38810;
+}
+
+thead,
+tfoot {
+    background-color: #d38810;
+    color: #fff;
+}
+
 input{
     display: block;
     width: 100%;
